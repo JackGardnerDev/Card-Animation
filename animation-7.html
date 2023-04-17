@@ -1,0 +1,90 @@
+<!-- 7 - cards change as they follow cursor -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+
+<img class="image" data-index="0" data-status="inactive" src="assets/cards/knights.png"/>
+<img class="image" data-index="1" data-status="inactive" src="assets/cards/jacks.png"/>
+<img class="image" data-index="2" data-status="inactive" src="assets/cards/kings.png"/>
+<img class="image" data-index="3" data-status="inactive" src="assets/cards/queens.png"/>
+<img class="image" data-index="4" data-status="inactive" src="assets/cards/jokers.png"/>
+<img class="image" data-index="5" data-status="inactive" src="assets/cards/knights.png"/>
+<img class="image" data-index="6" data-status="inactive" src="assets/cards/jacks.png"/>
+<img class="image" data-index="7" data-status="inactive" src="assets/cards/kings.png"/>
+<img class="image" data-index="8" data-status="inactive" src="assets/cards/queens.png"/>
+<img class="image" data-index="9" data-status="inactive" src="assets/cards/jokers.png"/>
+
+<style>
+
+body {
+  background-color: black;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.image {
+  width: 40vmin;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.image[data-status="inactive"] {
+  display: none;
+}
+
+.image[data-status="active"] {
+  display: block;
+}
+
+</style>
+
+<script>
+
+const images = document.getElementsByClassName("image");
+
+let globalIndex = 0,
+    last = { x: 0, y: 0 };
+
+const activate = (image, x, y) => {
+  image.style.left = `${x}px`;
+  image.style.top = `${y}px`;
+  image.style.zIndex = globalIndex;
+
+  image.dataset.status = "active";
+
+  last = { x, y };
+}
+
+const distanceFromLast = (x, y) => {
+  return Math.hypot(x - last.x, y - last.y);
+}
+
+const handleOnMove = e => {
+  if(distanceFromLast(e.clientX, e.clientY) > (window.innerWidth / 20)) {
+    const lead = images[globalIndex % images.length],
+          tail = images[(globalIndex - 5) % images.length];
+
+    activate(lead, e.clientX, e.clientY);
+
+    if(tail) tail.dataset.status = "inactive";
+    
+    globalIndex++;
+  }
+}
+
+window.onmousemove = e => handleOnMove(e);
+
+window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+body {
+    margin: 0px;
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    /* background-image: url(assets/monke.jpg); */
+}
+
+.card-groups,
+.card-group,
+.card {
+    aspect-ratio: 6 / 7;
+}
+
+.card-groups,
+.card-group,
+.big-card {
+    width: 50vmin;
+}
+
+.card-group {
+    position: absolute;
+}
+
+.card{
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    position: absolute;
+    transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+
+    background-position: center;
+    background-size: cover;
+}
+
+/* cards */
+
+.big-card {
+    width: 50vmin;
+    border-radius: 1vmin;
+}
+
+.big-card:nth-child(1) {
+    background-image: url(assets/cards/knights.png);
+    transform: translate(-35%, 8%) rotate(-16deg);
+}
+
+.big-card:nth-child(2) {
+    background-image: url(assets/cards/jacks.png);
+    transform: translate(-12.5%, 4%) rotate(-4deg);
+}
+
+.big-card:nth-child(3) {
+    background-image: url(assets/cards/kings.png);
+    transform: translate(12.5%, 4%) rotate(4deg);
+}
+
+.big-card:nth-child(4) {
+    background-image: url(assets/cards/queens.png);
+    transform: translate(35%, 8%) rotate(16deg);
+}
+
+/* hover */
+
+.card-group:hover > .big-card:nth-child(1) {
+    transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(2) {
+    transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.card-group:hover > .big-card:nth-child(3) {
+    transform: translate(25%, 8%) rotate(8deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+    transform: translate(75%, 16%) rotate(24deg);
+}
+
+/* Video Background */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+  }
+  
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+  
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.scrollable {
+  padding: 0px 0px;
+  margin: 75px 0px;
+  height: 775px;
+  overflow-y: auto;
+}
+
+/* Pop outs */
+
+/* .popouts{
+  align-items: center;
+  display: flex;
+  font-family: "Merriweather", serif;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.person {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.container {
+  border-radius: 50%;
+  height: 312px;
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(0.48);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400px;
+}
+
+.container:after {
+  background-color: #f2f2f2;
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 390px;
+  width: 100%;
+}
+
+.container:hover {
+  transform: scale(0.54);
+}
+
+.container-inner {
+  clip-path: path("M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z");
+  position: relative;
+  transform-origin: 50%;
+  top: -200px;
+}
+
+.circle {
+  background-color: #541B61;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 380px;
+  left: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 210px;
+  width: 380px;
+}
+
+.img {
+  pointer-events: none;
+  position: relative;
+  transform: translateY(20px) scale(1.15);
+  transform-origin: 50% bottom;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container:hover .img {
+  transform: translateY(0) scale(1.2);
+}
+
+.img1 {
+  left: 22px;
+  top: 164px;
+  width: 340px;
+}
+
+.img2 {
+  left: -46px;
+  top: 174px;
+  width: 444px;
+}
+
+.img3 {
+  left: -16px;
+  top: 144px;
+  width: 466px;
+}
+
+.name {
+  color: #541B61;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.title {
+  color: #541B61;
+  font-family: arial;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+} */
+
+/* Popout cards */
+
+.popout-groups,
+.popout-group,
+.popout {
+    aspect-ratio: 6 / 7;
+}
+
+.popout-groups,
+.popout-group,
+.big-popout {
+    width: 50vmin;
+}
+
+.popout-group {
+    position: absolute;
+}
+
+.popout{
+    position: absolute;
+    transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+
+    background-position: center;
+    background-size: cover;
+}
+
+.big-popout {
+  width: 50vmin;
+  border-radius: 1vmin;
+}
+
+.big-popout:nth-child(1) {
+  /* background-image: url(assets/popout/knights.png); */
+  transform: translate(-7%, 1.6%) rotate(-3.2deg);
+}
+
+.big-popout:nth-child(2) {
+  /* background-image: url(assets/cards/jacks.png); */
+  transform: translate(-12.5%, 4%) rotate(-4deg);
+}
+
+.big-popout:nth-child(3) {
+  /* background-image: url(assets/cards/kings.png); */
+  transform: translate(12.5%, 4%) rotate(4deg);
+}
+
+.big-popout:nth-child(4) {
+  /* background-image: url(assets/cards/queens.png); */
+  transform: translate(35%, 8%) rotate(16deg);
+}
+
+/* hover */
+
+.popout-group:hover > .big-popout:nth-child(1) {
+  /* transform: translate(0%, 16%); */
+  transform: translateX(-100px);
+}
+
+.popout-group:hover > .big-popout:nth-child(2) {
+  transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.popout-group:hover > .big-popout:nth-child(3) {
+  transform: translate(25%, 8%) rotate(8deg);
+}
+
+.popout-group:hover > .big-popout:nth-child(4) {
+  transform: translate(75%, 16%) rotate(24deg);
+}
+
+/* Card Nav */
+
+/* .card-groups,
+.card-group,
+.card {
+    aspect-ratio: 6 / 7;
+} */
+
+.card-groups,
+.card-group,
+.nav-card {
+    width: 50vmin;
+}
+
+.card-group {
+    position: absolute;
+}
+
+.card{
+    position: absolute;
+    transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+
+    background-position: center;
+    background-size: cover;
+}
+
+.nav-card {
+    width: 50vmin;
+    border-radius: 1vmin;
+}
+
+.nav-card:nth-child(1) {
+    background-image: url(assets/cards/knights.png);
+    transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.nav-card:nth-child(2) {
+    background-image: url(assets/cards/jacks.png);
+    transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.nav-card:nth-child(3) {
+    background-image: url(assets/cards/kings.png);
+    transform: translate(25%, 8%) rotate(8deg);
+}
+
+.nav-card:nth-child(4) {
+    background-image: url(assets/cards/queens.png);
+    transform: translate(75%, 16%) rotate(24deg);
+}
+
+/* hover */
+
+.card-group:hover > .nav-card:nth-child(1) {
+    /* transform: translate(0%, 0%) rotate(0deg); */
+    /* transform: translateX(-300px);
+    transform: translateY(-100px); */
+    transform: translate(-300px, -300px)
+}
+
+.card-group:hover > .nav-card:nth-child(2) {
+    transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.card-group:hover > .nav-card:nth-child(3) {
+    transform: translate(25%, 8%) rotate(8deg);
+}
+
+.card-group:hover > .nav-card:nth-child(4) {
+    transform: translate(75%, 16%) rotate(24deg);
+}
+
+/* #knights{
+  display: none;
+  width: 300px;
+  height: 150px;
+  color: #541B61;
+  color: white;
+}
+
+.show:hover ~ #knights{
+  display: block;
+} */
+
+/* #jacks{
+  display: none;
+  width: 300px;
+  height: 150px;
+  color: #541B61;
+}
+.show:hover ~ #jacks{
+  display: block;
+} */
+
+/* hover effects */
+
+    /* Knights */
+    .knightsHidden {
+      display: none;
+    }
+        
+    .showKnights:hover + .knightsHidden {
+      display: block;
+      color: #541B61;
+    }
+
+    /* Jacks */
+    .jacksHidden {
+      display: none;
+    }
+        
+    .showJacks:hover + .jacksHidden {
+      display: block;
+      color: #541B61;
+    }
+
+    /* kings */
+    .kingsHidden {
+      display: none;
+    }
+        
+    .showKings:hover + .kingsHidden {
+      display: block;
+      color: #541B61;
+    }
+
+    /* queens */
+    .queensHidden {
+      display: none;
+    }
+        
+    .showQueens:hover + .queensHidden {
+      display: block;
+      color: #541B61;
+    }

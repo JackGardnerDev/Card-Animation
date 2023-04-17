@@ -1,0 +1,76 @@
+<!-- 4 - cards are shuffled and move across screen into pile (done, can use tweaking) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+
+    <audio controls autoplay loop hidden>
+        <source src="assets/sound/test.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+
+        <div class="content">
+            
+            <marquee width="100%" scrollamount="75" direction="right" behavior="slide">
+                <a href="knights.html"><img src="assets/cards/knights.png" width="350" height="350" alt="Knights"/></a>
+            </marquee>
+
+        </div>
+
+        <div class="content">
+
+            <marquee width="95%" scrollamount="75" direction="right" behavior="slide">
+                <a href="jacks.html"><img src="assets/cards/jacks.png" width="350" height="350" alt="Jacks"/></a>
+            </marquee>
+            
+        </div>
+
+        <div class="content">
+
+            <marquee width="90%" scrollamount="75" direction="right" behavior="slide">
+                <a href="kings.html"><img src="assets/cards/kings.png" width="350" height="350" alt="Kings"/></a>
+            </marquee>
+            
+        </div>
+
+        <div class="content">
+
+            <marquee width="85%" scrollamount="75" direction="right" behavior="slide">
+                <a href="queens.html"><img src="assets/cards/queens.png" width="350" height="350" alt="Queens"/></a>
+            </marquee>
+            
+        </div>
+
+    </div>
+
+<style>
+
+body {
+    background-color: black;
+}
+
+.cards-body {
+    margin: 0px;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    height:200px;
+    clear:both;
+}
+.content{
+    width:100%;
+    height:25px;
+    margin-top:0px;
+}
+
+</style>

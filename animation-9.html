@@ -1,0 +1,205 @@
+<!-- 14, cards spread animation + poker chips, issue with cards 10 to left of center -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14</title>
+</head>
+<body>
+
+    <div class="card-swiper">
+
+        <div class="card-groups">
+          <div class="card-group" data-index="0" data-status="active">
+            <div class="little-card card">
+      
+            </div>
+            <div class="big-card card">
+      
+            </div>
+            <div class="little-card card">
+      
+            </div>
+            <div class="big-card card">
+      
+            </div>
+            <div class="little-card card">
+      
+            </div>
+            <div class="big-card card">
+      
+            </div>
+            <div class="little-card card">
+      
+            </div>
+            <div class="big-card card">
+      
+            </div>
+          </div>
+
+<!-- style -->
+
+<style>
+
+body {
+  background-color: rgb(0, 0, 0);  
+  margin: 0px;  
+  height: 100vh;
+  
+  display: grid;
+  place-items: center;
+}
+
+.card-groups,
+.card-group,
+.card {
+  aspect-ratio: 4 / 7;
+}
+
+.card-groups,
+.card-group,
+.big-card {  
+  width: 30vmin;
+}
+
+.card-group {
+  position: absolute;
+  transition: transform 400ms ease;
+}
+
+.card-group[data-status="unknown"] {
+  transform: scale(0);
+  transition: none;
+}
+
+.card-group[data-status="active"] {
+  transition-delay: 300ms;
+}
+
+.card-group[data-status="after"] {
+  transform: translateX(50%) scale(0);
+}
+
+.card-group[data-status="before"] {
+  transform: translateX(-50%) scale(0);
+}
+
+.card-group[data-status="becoming-active-from-after"] {
+  transform: translateX(50%) scale(0);
+  transition: none;
+}
+
+.card-group[data-status="becoming-active-from-before"] {
+  transform: translateX(-50%) scale(0);
+  transition: none;
+}
+
+.card {
+  position: absolute;
+  transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+  
+  background-position: center;
+  background-size: cover;
+}
+
+.big-card {
+  border-radius: 1vmin;
+  z-index: 2;
+}
+
+.little-card {
+  width: 12vmin;
+  height: 12vmin;
+  border-radius: 2vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* cards */
+
+.big-card:nth-child(2) {
+    background-image: url(assets/cards/knights.png);
+    transform: translate(-35%, 8%) rotate(-16deg);
+}
+
+.big-card:nth-child(4) {
+    background-image: url(assets/cards/jacks.png);
+    transform: translate(-12.5%, 4%) rotate(-4deg);
+}
+
+.big-card:nth-child(6) {
+    background-image: url(assets/cards/kings.png);
+    transform: translate(12.5%, 4%) rotate(4deg);
+}
+
+.big-card:nth-child(8) {
+    background-image: url(assets/cards/queens.png);
+    transform: translate(35%, 8%) rotate(16deg);
+}
+
+/* chips */
+
+.little-card:nth-child(1) {
+  background-image: url(assets/ace-icon.png);
+}
+
+.little-card:nth-child(3) {
+  background-image: url(assets/chip.png);
+}
+
+.little-card:nth-child(5) {
+  background-image: url(assets/chip.png);
+}
+
+.little-card:nth-child(7) {
+  background-image: url(assets/ace-icon.png);
+}
+
+/* cards move */
+
+.card-group:hover > .big-card:nth-child(2) {
+  transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+  transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.card-group:hover > .big-card:nth-child(6) {
+  transform: translate(25%, 8%) rotate(8deg);
+}
+
+.card-group:hover > .big-card:nth-child(8) {
+  transform: translate(75%, 16%) rotate(24deg);
+}
+
+/* chips move */
+
+.card-group:hover > .little-card:nth-child(1) {
+    transform: translate(190%, -210%) rotate(-15deg);
+}
+
+.card-group:hover > .little-card:nth-child(3) {
+    /* transform: translate(190%, 220%) rotate(15deg); */
+    transform: translate(240%, 220%) rotate(15deg);
+}
+
+.card-group:hover > .little-card:nth-child(5) {
+    transform: translate(-300%, -220%) rotate(15deg);
+}
+
+.card-group:hover > .little-card:nth-child(7) {
+    /* transform: translate(-340%, 210%) rotate(-15deg); */
+    transform: translate(-350%, 210%) rotate(-15deg);
+}
+
+</style>
+    
+</body>
+</html>

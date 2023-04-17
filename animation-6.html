@@ -1,0 +1,117 @@
+<!-- 6 - cards is played, normal align (done, can use tweaking) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+<body>
+
+<!-- cards -->
+    
+<div class="card-group">
+
+    <div class="big-card card">
+      <a href="knights.html"><img src="assets/cards/knights.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+
+    <div class="big-card card">
+      <a href="jacks.html"><img src="assets/cards/jacks.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+
+    <div class="big-card card">
+        <a href="queens.html"><img src="assets/cards/queens.png" alt="Logo" style="width:60vmin;"></a>
+      </div>
+
+    <div class="big-card card">
+      <a href="kings.html"><img src="assets/cards/kings.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+
+</div>
+
+<!-- style -->
+
+<style>
+
+body {
+    margin: 0px;
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card-groups,
+.card-group,
+.card {
+    aspect-ratio: 6 / 7;
+}
+
+.card-groups,
+.card-group,
+.big-card {
+    width: 50vmin;
+}
+
+.card-group {
+    position: absolute;
+}
+
+.card{
+    position: absolute;
+    transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+
+    background-position: center;
+    background-size: cover;
+}
+
+/* cards */
+
+.big-card {
+    width: 50vmin;
+    border-radius: 1vmin;
+}
+
+/* 1st is horizontal, 2nd is vertical */
+
+.big-card:nth-child(1) {
+    transform: translate(-550px, 0px)
+}
+
+.big-card:nth-child(2) {
+    transform: translate(-225px, 0px)
+}
+
+.big-card:nth-child(3) {
+    transform: translate(150px, -15px)
+}
+
+.big-card:nth-child(4) {
+    transform: translate(500px, 0px)
+}
+
+/* hover */
+
+.big-card:nth-child(1):hover {
+    transform: translate(-550px, -200px)
+}
+
+.big-card:nth-child(2):hover {
+    transform: translate(-225px, -200px)
+}
+
+.big-card:nth-child(3):hover {
+    transform: translate(150px, -215px)
+}
+
+.big-card:nth-child(4):hover {
+    transform: translate(500px, -200px)
+}
+
+</style>
+
+</body>
+</html>

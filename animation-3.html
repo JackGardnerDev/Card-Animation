@@ -1,0 +1,227 @@
+<!-- 3 - card is played & text is revealed + nav -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+
+<!-- <div class="showKnights">Knights Image</div>
+<div class="knightsHidden">Knights is a blah blah blah</div>
+
+<div class="showJacks">Jacks Image</div>
+<div class="jacksHidden">Jacks is a blah blah blah</div>
+
+<div class="showKings">Kings Image</div>
+<div class="kingsHidden">Kings is a blah blah blah</div>
+
+<div class="showQueens">Queens Image</div>
+<div class="queensHidden">Queens is a blah blah blah</div> -->
+
+    <!-- <div class="showKnights">
+        <div class="knightsHidden">Knights is a blah blah blah</div>
+        <a href="knights.html"></a>
+    </div> -->
+    <!-- <a href="knights.html"><img src="assets/cards/knights.png" alt="Logo" style="width:60vmin; border-radius: 1vmin;"></a> -->
+
+    <!-- <div class="showJacks">
+      <div class="jacksHidden">Jacks is a blah blah blah</div>
+      <a href="jacks.html"></a>
+    </div> -->
+    <!-- <a href="knights.html"><img src="assets/cards/jacks.png" alt="Logo" style="width:60vmin; border-radius: 1vmin;"></a> -->
+ 
+    <!-- <div class="showKings">
+      <div class="kingsHidden">Kings is a blah blah blah</div>
+      <a href="kings.html"></a>
+    </div> -->
+    <!-- <a href="knights.html"><img src="assets/cards/kings.png" alt="Logo" style="width:60vmin; border-radius: 1vmin;"></a> -->
+
+    <!-- <div class="showQueens">
+      <div class="queensHidden">Queens is a blah blah blah</div>
+      <a href="queens.html"></a>
+    </div> -->
+    <!-- <a href="knights.html"><img src="assets/cards/queens.png" alt="Logo" style="width:60vmin; border-radius: 1vmin;"></a> -->
+
+<!-- Cards -->
+    
+<div class="card-group">
+
+    <div class="big-card card">
+        <a href="knights.html"><img src="assets/cards/knights.png" alt="Logo" style="width:60vmin;"></a>
+        <!-- <a href="knights.html"></a> -->
+        <!-- <div class="knightsHidden">Knights is a blah blah blah</div> -->
+      </div>
+  
+      <div class="big-card card">
+        <a href="jacks.html"><img src="assets/cards/jacks.png" alt="Logo" style="width:60vmin;"></a>
+        <!-- <a href="jacks.html"></a> -->
+        <div class="jacksHidden">Jacks is a blah blah blah</div>
+      </div>
+  
+      <div class="big-card card">
+        <a href="kings.html"><img src="assets/cards/kings.png" alt="Logo" style="width:60vmin;"></a>
+        <!-- <a href="kings.html"></a> -->
+        <div class="kingsHidden">Kings is a blah blah blah</div>
+      </div>
+  
+      <div class="big-card card">
+        <a href="queens.html"><img src="assets/cards/queens.png" alt="Logo" style="width:60vmin;"></a>
+        <!-- <a href="queens.html"></a> -->
+        <div class="queensHidden">Queens is a blah blah blah</div>
+      </div>
+
+</div>
+
+<!-- text -->
+
+<div class="center">
+  <div class="knightsHidden">Knights is a blah blah blah</div>
+</div>
+
+<div class="knightsHidden">Knights is a blah blah blah</div>
+
+<!-- style -->
+
+<style>
+
+    body {
+        margin: 0px;
+        background-color: black;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .center {
+      border: 5px solid;
+      display: flex;
+      justify-content: center;
+    }
+
+
+    /* HIDDEN */
+
+    /* Knights */
+    .knightsHidden {
+      display: none;
+    }
+        
+    /* .showKnights:hover + .knightsHidden {
+      display: block;
+      color: #541B61;
+    } */
+
+    /* Jacks */
+    .jacksHidden {
+      display: none;
+    }
+        
+    .showJacks:hover + .jacksHidden {
+      display: block;
+      color: #541B61;
+    }
+
+    /* Kings */
+    .kingsHidden {
+      display: none;
+    }
+        
+    .showKings:hover + .kingsHidden {
+      display: block;
+      color: #541B61;
+    }
+
+    /* Queens */
+    .queensHidden {
+      display: none;
+    }
+        
+    .showQueens:hover + .queensHidden {
+      display: block;
+      color: #541B61;
+    }
+
+    /* CARDS */
+
+    /* Card Nav */
+
+    .card-groups,
+    .card-group,
+    .card {
+        aspect-ratio: 6 / 7;
+    }
+
+    .card-groups,
+    .card-group,
+    .big-card {
+        width: 50vmin;
+    }
+
+    .card-group {
+        position: absolute;
+    }
+
+    .card{
+        position: absolute;
+        transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .big-card {
+        width: 50vmin;
+        border-radius: 1vmin;
+    }
+
+    .big-card:nth-child(1) {
+        /* background-image: url(assets/cards/knights.png); */
+        transform: translate(-75%, 16%) rotate(-24deg);
+    }
+
+    .big-card:nth-child(2) {
+        /* background-image: url(assets/cards/jacks.png); */
+        transform: translate(-25%, 8%) rotate(-8deg);
+    }
+
+    .big-card:nth-child(3) {
+        /* background-image: url(assets/cards/kings.png); */
+        transform: translate(25%, 8%) rotate(8deg);
+    }
+
+    .big-card:nth-child(4) {
+        /* background-image: url(assets/cards/queens.png); */
+        transform: translate(75%, 16%) rotate(24deg);
+    }
+
+    /* Hover */
+
+    .big-card:nth-child(1):hover {
+        transform: translate(-300px, -300px)
+    }
+
+    .big-card:nth-child(2):hover {
+        transform: translate(-100px, -300px)
+    }
+
+    .big-card:nth-child(3):hover {
+        transform: translate(100px, -300px)
+    }
+
+    .big-card:nth-child(4):hover {
+        transform: translate(300px, -300px)
+    }
+
+    .big-card:nth-child(1):hover + .knightsHidden {
+        display: block;
+        color: #541B61;
+    }
+
+</style>
+
+</body>
+</html>

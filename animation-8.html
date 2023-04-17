@@ -1,0 +1,176 @@
+<!-- 13 - 3 but when card is played text is revealed + nav -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- Cards -->
+
+<div class="card-group" style="top:150px;">
+    <div class="big-card card">
+        <a href="knights.html"><img id="knights-show" src="assets/cards/knights.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+    <div class="big-card card">
+        <a href="jacks.html"><img id="jacks-show" src="assets/cards/jacks.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+    <div class="big-card card">
+        <a href="kings.html"><img id="kings-show" src="assets/cards/kings.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+    <div class="big-card card">
+        <a href="queens.html"><img id="queens-show" src="assets/cards/queens.png" alt="Logo" style="width:60vmin;"></a>
+    </div>
+</div>
+
+<!-- text -->
+
+<div style="top:550px;">
+    <div>
+        <div id="knights-hidden">Knights</div>
+    </div>
+    <div>
+        <div id="jacks-hidden">Jacks</div>
+    </div>
+    <div>
+        <div id="kings-hidden">Kings</div>
+    </div>
+    <div>
+        <div id="queens-hidden">Queens</div>
+    </div>
+</div>
+
+<!-- style -->
+
+<style>
+
+/* General */
+
+body {
+    margin: 0px;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    color: #541B61;
+}
+
+.center {
+    border: 5px solid;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hidden */
+
+#knights-hidden { 
+    display: none; 
+}
+
+#jacks-hidden { 
+    display: none; 
+}
+
+#kings-hidden { 
+    display: none; 
+}
+
+#queens-hidden { 
+    display: none; 
+}
+
+/* Cards */
+
+    .card-groups,
+    .card-group,
+    .card {
+        aspect-ratio: 6 / 7;
+    }
+
+    .card-groups,
+    .card-group,
+    .big-card {
+        width: 50vmin;
+    }
+
+    .card-group {
+        position: absolute;
+    }
+
+    .card{
+        position: absolute;
+        transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .big-card {
+        width: 50vmin;
+        border-radius: 1vmin;
+    }
+
+    .big-card:nth-child(1) {
+        transform: translate(-75%, 16%) rotate(-24deg);
+    }
+
+    .big-card:nth-child(2) {
+        transform: translate(-25%, 8%) rotate(-8deg);
+    }
+
+    .big-card:nth-child(3) {
+        transform: translate(25%, 8%) rotate(8deg);
+    }
+
+    .big-card:nth-child(4) {
+        transform: translate(75%, 16%) rotate(24deg);
+    }
+
+/* Card Hover */
+
+.big-card:nth-child(1):hover {
+    transform: translate(-300px, -300px)
+}
+
+.big-card:nth-child(2):hover {
+    transform: translate(-100px, -300px)
+}
+
+.big-card:nth-child(3):hover {
+    transform: translate(100px, -300px)
+}
+
+.big-card:nth-child(4):hover {
+    transform: translate(300px, -300px)
+}
+
+</style>
+
+<!-- Script -->
+
+<script>
+
+$('#knights-show').hover(function() {
+    $('#knights-hidden').toggle();
+});
+
+$('#jacks-show').hover(function() {
+    $('#jacks-hidden').toggle();
+});
+
+$('#kings-show').hover(function() {
+    $('#kings-hidden').toggle();
+});
+
+$('#queens-show').hover(function() {
+    $('#queens-hidden').toggle();
+});
+
+</script>
+
+</body>
+</html>
